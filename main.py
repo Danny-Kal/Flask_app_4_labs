@@ -1,8 +1,10 @@
+import json
+from subprocess import run
+import shutil
 from flask import Flask, render_template, Response
 import os
 from azure.identity import ClientSecretCredential
 from azure.mgmt.resource import ResourceManagementClient
-from azure.mgmt.resource.resources.models import DeploymentMode
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -28,12 +30,6 @@ def index():
     """Render the main page with the deploy button."""
     return render_template('index.html')
 
-from subprocess import run
-import shutil
-
-import json
-from subprocess import run
-import shutil
 
 @app.route('/deploy-lab', methods=['POST'])
 def deploy_lab():
