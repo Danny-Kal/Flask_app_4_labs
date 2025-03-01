@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy Lab</title>
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+</head>
+<body>
+
+    <h2>Click the button to deploy your lab</h2>
+    <button hx-post="/deploy-lab" 
+            hx-trigger="click" 
+            hx-target="#status" 
+            hx-swap="innerHTML">
+        Deploy Lab
+    </button>
+
+    <p id="status"></p>
+
+</body>
+</html>
